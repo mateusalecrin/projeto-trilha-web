@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="style.css"></link>
+<title>Contato</title>
+</head>
+<body>
+    <div id="container">
+        <fieldset>
+            <legend>Contato</legend>
+            <form name="cadastro" action=# method="post" onsubmit="return validaFormulario()">
+                <lable for="nome">Nome:</lable>
+                <input type="text" name="nome">
+                
+                <lable for="endereco">Endereço:</lable>
+                <input type="text" name="endereco">
+                
+                <lable for="tel">Telefone:</lable>
+                <input type="text" name="tel">
+                
+                <div id="botoes">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpar</button>
+                </div>
+            </form>
+        </fieldset>                                            
+    </div>
+    <script>
+        function validaFormulario(){
+            // validação do campo nome
+            let nome = document.cadastro.nome.value;
+            let regExpNome = /[A-zÀ-ü]{2,}([ ]{1}[A-zÀ-ü]{2,})+/;
+            if(!regExpNome.test(nome)){
+                alert("Preencha o campo Nome corretamente.");
+                document.cadastro.nome.focus();
+                return false;
+            }
+            
+            // validação endereço
+            let endereco = document.cadastro.endereco.value;
+            let regExpEnd = /(^(RUA|rua|Rua|R.|AVENIDA|avenida|Avenida|AV.|TRAVESSA|Travessa|travessa|TRAV.|Trav.)[\w\s][^0-9|,]*)(((,\s|(N|n)º\s)([0-9\/]+))|(\s?([0-9\/]+)))+(.*?)$/;
+            if(!regExpEnd.test(endereco)){
+                alert("Preencha o campo endereço corretamente.");
+                document.cadastro.endereco.focus();
+                return false;
+            }
+            
+            //validação telefone
+            let fone = document.cadastro.tel.value;
+            let regExpFone = /[(][1-9]{2}[)][0-9]{4,5}[-][0-9]{4}/;
+            if(!regExpFone.test(fone)){
+                alert("Preencha o campo telefone corretamente.");
+                document.cadastro.tel.focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

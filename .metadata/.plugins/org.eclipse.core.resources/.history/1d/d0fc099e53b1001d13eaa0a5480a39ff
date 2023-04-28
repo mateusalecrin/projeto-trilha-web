@@ -1,0 +1,18 @@
+function validaFaleConosco() {
+	if (document.frmfaleconosco.txtnome.value==""){
+		alert("Preencha o campo Nome.");
+		document.frmfaleconosco.txtnome.focus();
+		return false;
+	}
+
+	if (document.frmfaleconosco.txtfone.value="") {
+		alert("Preencha o campo Telefone.")
+		document.frmfaleconosco.txtfone();
+		return false;
+	}
+
+
+
+
+	return true;
+}
