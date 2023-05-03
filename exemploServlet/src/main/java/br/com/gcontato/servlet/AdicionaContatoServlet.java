@@ -26,8 +26,13 @@ public class AdicionaContatoServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		String nome = request.getParameter("nome");
-
-		out.println(nome);
+		String endereco = request.getParameter("endereco");
+		String telefone = request.getParameter("tel");
+		
+		out.println("<h1>Informacoes preenchidas</h1>");
+		out.println("<p>Nome: "+nome+"</p>");
+		out.println("<p>Endereco: "+endereco+"</p>");
+		out.println("<p>Telefone "+telefone+"</p>");
 
 	}
 

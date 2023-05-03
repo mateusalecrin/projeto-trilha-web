@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="style.css"></link>
 <title>Contato</title>
 </head>
@@ -13,7 +13,7 @@
                 <lable for="nome">Nome:</lable>
                 <input type="text" name="nome">
                 
-                <lable for="endereco">Endereço:</lable>
+                <lable for="endereco">EndereÃ§o:</lable>
                 <input type="text" name="endereco">
                 
                 <lable for="tel">Telefone:</lable>
@@ -28,25 +28,25 @@
     </div>
     <script>
         function validaFormulario(){
-            // validação do campo nome
+            // validaÃ§Ã£o do campo nome
             let nome = document.cadastro.nome.value;
-            let regExpNome = /[A-zÀ-ü]{2,}([ ]{1}[A-zÀ-ü]{2,})+/;
+            let regExpNome = /[A-zÃ€-Ã¼]{2,}([ ]{1}[A-zÃ€-Ã¼]{2,})+/;
             if(!regExpNome.test(nome)){
                 alert("Preencha o campo Nome corretamente.");
                 document.cadastro.nome.focus();
                 return false;
             }
             
-            // validação endereço
+            // validaÃ§Ã£o endereÃ§o
             let endereco = document.cadastro.endereco.value;
-            let regExpEnd = /(^(RUA|rua|Rua|R.|AVENIDA|avenida|Avenida|AV.|TRAVESSA|Travessa|travessa|TRAV.|Trav.)[\w\s][^0-9|,]*)(((,\s|(N|n)º\s)([0-9\/]+))|(\s?([0-9\/]+)))+(.*?)$/;
+            let regExpEnd = /(^(RUA|rua|Rua|R.|AVENIDA|avenida|Avenida|AV.|TRAVESSA|Travessa|travessa|TRAV.|Trav.)[\w\s][^0-9|,]*)(((,\s|(N|n)Âº\s)([0-9\/]+))|(\s?([0-9\/]+)))+(.*?)$/;
             if(!regExpEnd.test(endereco)){
-                alert("Preencha o campo endereço corretamente.");
+                alert("Preencha o campo endereÃ§o corretamente.");
                 document.cadastro.endereco.focus();
                 return false;
             }
             
-            //validação telefone
+            //validaÃ§Ã£o telefone
             let fone = document.cadastro.tel.value;
             let regExpFone = /[(][1-9]{2}[)][0-9]{4,5}[-][0-9]{4}/;
             if(!regExpFone.test(fone)){
