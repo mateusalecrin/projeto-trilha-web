@@ -1,5 +1,4 @@
 package br.com.gcontato.servlet;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -8,19 +7,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class AdicionaContatoServlet extends HttpServlet {
-
 	private static final long serialVersionUID = 1L;
 
 	public AdicionaContatoServlet() {
-
 		super();
-
 	}
 
 	@Override
-
 	protected void service(HttpServletRequest request, HttpServletResponse response)
-
 			throws ServletException, IOException {
 
 		PrintWriter out = response.getWriter();
@@ -33,19 +27,14 @@ public class AdicionaContatoServlet extends HttpServlet {
 		out.println("<p>Nome: "+nome+"</p>");
 		out.println("<p>Endereco: "+endereco+"</p>");
 		out.println("<p>Telefone "+telefone+"</p>");
-
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-
 			throws ServletException, IOException {
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-
 			throws ServletException, IOException {
-
 	}
 
 }
